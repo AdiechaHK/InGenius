@@ -108,8 +108,12 @@ if ( ! function_exists('client_page_render'))
 
     }
     $header_special_data = array('next_page_link'=> getPageLink($name, "next"), 'previous_page_link'=> getPageLink($name, "prev"));
+    $header_data = array_merge($data, $header_special_data);
     $controller->load->view('common/header', array('css'=> $css_list));
-    $controller->load->view('common/client_header', array_merge($data, $header_special_data));
+    // $controller->load->view('common/client_header', array_merge($data, $header_special_data));
+    $controller->load->view('common/client_header_before_nav', $header_data);
+    $controller->load->view('partials/navbar', $header_data);
+    $controller->load->view('common/client_header_after_nav', $header_data);
     $controller->load->view('pages/'.$name, $data);
     if($side_bar) {
       $controller->load->view('common/client_sidebar', $data);
