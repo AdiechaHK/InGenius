@@ -11,23 +11,20 @@
     <script src=<?php echo "\"".base_url("public/js/bootstrap.min.js")."\""; ?>></script>
     <title>
       <?php
-      if(isset($title)) {
-        echo $title;
-      } else {
-        echo "InGenius";  
-      }
-      ?>      
+        if(isset($title)) {
+          echo $title;
+        } else {
+          echo "InGenius";
+        }
+        ?>
     </title>
-
     <!-- Bootstrap core CSS -->
     <link href=<?php echo "\"".base_url("public/css/bootstrap.css")."\""; ?> rel="stylesheet">
     <link href=<?php echo "\"".base_url("public/css/common.css")."\""; ?> rel="stylesheet">
     <?php foreach ($css as $css_name) { ?>
     <link href=<?php echo "\"".base_url("public/css/".$css_name.".css")."\""; ?> rel="stylesheet">
     <?php } ?>
-
   </head>
   <body>
-
     <!-- Wrap all page content here -->
     <div id="wrap">
