@@ -17,8 +17,8 @@
         <div class="col-sm-12">
           <a href="#" class="name-1 formSpecialLinks"><span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-share"></i></span> SHARE UPLOAD</a>&nbsp;&nbsp;&nbsp;
           <!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#uploadMedia">
-          <span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA
-          </button> -->
+            <span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA
+            </button> -->
           <a href="#uploadMedia" data-toggle="modal" data-target="#uploadMedia" class="name-1 formSpecialLinks"><span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA</a>
           <span class="pull-right" >
             Sharing in:
@@ -41,7 +41,7 @@
           <!-- <textarea class="form-control" rows="5" name="description" placeholder="Description"></textarea> -->
         </div>
         <div class="col-sm-2">
-      <button type="submit" class=" btn btn-danger btn-enter pull-right">Share</button>
+          <button type="submit" class=" btn btn-danger btn-enter pull-right">Share</button>
         </div>
       </div>
       <!-- <input class="form-control" /> -->
@@ -53,66 +53,61 @@
   <span id="currentTime" time=<?='"'.(time()).'"'?> ></span>
   <!-- </div> -->
   <!-- this row is to list out all blog post -->
-    <div class="row box">
-
-      <div class="clearfix col-sm-12 top-spacing">
-        <img class="img-size-c1" src=<?='"'.(isset($blog_posted_by->profile_pic)?$blog_posted_by->profile_pic:base_url("public/img/user-icon.png")).'"'?> />
-        <span class="name-1"><?=$blog_posted_by->username?></span>
-        <span class="title-c1" ><?=$blog_posted_by->location?></span>
-        <span class="post-time-span pull-right" postTime=<?='"'.strtotime($blog_post->post_at).'"'?> ></span>
-        <hr class="hr-pos" />
-      </div>
-      <div class="clearfix col-sm-4 top-spacing">
-        <div class="title-c4"><?=$blog_post->title?></div>
-      </div>
-      <div class="clearfix col-sm-5 top-spacing justify">
-        <div class="title-c41"><?=str_replace("\n", "<br>",  $blog_post->details)?></div>
-      </div>
-      <div class="clearfix col-sm-3 top-spacing">
-        <?php if(isset($user)) { ?>
-          <?=anchor("welcome/blog_like/".$blog_post->id, (isset($liked) && $liked==1) ?"Unlike":"Like", array('class'=>"see-all-1"))?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=anchor("#", "Share")?>
-          <?=form_open("welcome/blog_comment/$blog_post->id")?>
-          <!-- <div class="col-sm-12"> -->
-            <!-- <input type="text" class="form-control" name="body" placeholder="Body"> -->
-            <textarea class="col-sm-12 form-control commentTextArea" rows="3" name="comment" placeholder="Write your comment here"></textarea>
-            <button type="submit" class="col-sm-12 btn btn-danger btn-enter ">Comment</button>
-
-          <!-- </div> -->
-          <?=form_close()?>
-
-          <div style="margin-top: 150px;">
+  <div class="row box">
+    <div class="clearfix col-sm-12 top-spacing">
+      <img class="img-size-c1" src=<?='"'.(isset($blog_posted_by->profile_pic)?$blog_posted_by->profile_pic:base_url("public/img/user-icon.png")).'"'?> />
+      <span class="name-1"><?=$blog_posted_by->username?></span>
+      <span class="title-c1" ><?=$blog_posted_by->location?></span>
+      <span class="post-time-span pull-right" postTime=<?='"'.strtotime($blog_post->post_at).'"'?> ></span>
+      <hr class="hr-pos" />
+    </div>
+    <div class="clearfix col-sm-4 top-spacing">
+      <div class="title-c4"><?=$blog_post->title?></div>
+    </div>
+    <div class="clearfix col-sm-5 top-spacing justify">
+      <div class="title-c41"><?=str_replace("\n", "<br>",  $blog_post->details)?></div>
+    </div>
+    <div class="clearfix col-sm-3 top-spacing">
+      <?php if(isset($user)) { ?>
+      <?=anchor("welcome/blog_like/".$blog_post->id, (isset($liked) && $liked==1) ?"Unlike":"Like", array('class'=>"see-all-1"))?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=anchor("#", "Share")?>
+      <?=form_open("welcome/blog_comment/$blog_post->id")?>
+      <!-- <div class="col-sm-12"> -->
+      <!-- <input type="text" class="form-control" name="body" placeholder="Body"> -->
+      <textarea class="col-sm-12 form-control commentTextArea" rows="3" name="comment" placeholder="Write your comment here"></textarea>
+      <button type="submit" class="col-sm-12 btn btn-danger btn-enter ">Comment</button>
+      <!-- </div> -->
+      <?=form_close()?>
+      <div style="margin-top: 150px;">
         <?php } else { ?>
-          <div>
-        <?php } ?>
-
+        <div>
+          <?php } ?>
           <span ><?=$like_count?>&nbsp;<?=$like_count>1?"Likes":"Like"?></span>&nbsp;&nbsp;|&nbsp;&nbsp;
           <?php $comment_count = sizeof($comments); ?>
           <span ><?=$comment_count?>&nbsp;<?=$comment_count>1?"Comments":"Comment"?></span>
         </div>
         <hr />
         <?php foreach($comments as $comment) { ?>
-          <div>
-            <div class="c-name"><?=$comment->user?></div>
-            <div class="c-des"><?=$comment->comment?></div>
-            <?php if(isset($user)) { ?>
-            <div class="like-comment hide">
-              <span class="like"><a href="">Like</a></span>&nbsp;&nbsp;<span class="u-comment"><a href=""><strong>Reply</strong></a></span>
-            </div>                
-            <?php } ?>
+        <div>
+          <div class="c-name"><?=$comment->user?></div>
+          <div class="c-des"><?=$comment->comment?></div>
+          <?php if(isset($user)) { ?>
+          <div class="like-comment hide">
+            <span class="like"><a href="">Like</a></span>&nbsp;&nbsp;<span class="u-comment"><a href=""><strong>Reply</strong></a></span>
           </div>
-
-          <hr>
+          <?php } ?>
+        </div>
+        <hr>
         <?php } ?>
-        
       </div>
     </div>
   </div>
   <div class="row">
     <!-- <div class="col-sm-6"> -->
-      <?=(isset($prev))?anchor("welcome/blog/".$prev->id, " << Previous", array('class'=>"btn btn-default pull-left", 'title'=> $prev->title)):""?>
-<!--     </div>
-    <div class="col-sm-6">
- -->      <?=(isset($next))?anchor("welcome/blog/".$next->id, "Next >>", array('class'=>"btn btn-default pull-right", 'title'=> $next->title)):""?>
+    <?=(isset($prev))?anchor("welcome/blog/".$prev->id, " << Previous", array('class'=>"btn btn-default pull-left", 'title'=> $prev->title)):""?>
+    <!--     </div>
+      <div class="col-sm-6">
+      -->      <?=(isset($next))?anchor("welcome/blog/".$next->id, "Next >>", array('class'=>"btn btn-default pull-right", 'title'=> $next->title)):""?>
     <!-- </div> -->
-  </div><br/>
+  </div>
+  <br/>
 </div>

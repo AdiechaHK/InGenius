@@ -21,7 +21,6 @@
   <div class="form-group">
     <label for="gender">Gender</label>
     <select name="gender" class="form-control" id="gender" >
-
       <option value="0" <?=isset($user->gender) && $user->gender == 0? "selected":""?>>Male</option>
       <option value="1" <?=isset($user->gender) && $user->gender == 1? "selected":""?>>Female</option>
     </select>

@@ -18,8 +18,8 @@
       <div class="col-sm-12">
         <a href="#" class="name-1 formSpecialLinks"><span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-share"></i></span> SHARE UPLOAD</a>&nbsp;&nbsp;&nbsp;
         <!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#uploadMedia">
-        <span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA
-        </button> -->
+          <span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA
+          </button> -->
         <a href="#uploadMedia" data-toggle="modal" data-target="#uploadMedia" class="name-1 formSpecialLinks"><span class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-eye-open"></i></span> UPLOAD MEDIA</a>
         <span class="pull-right" >
           Sharing in:
@@ -54,7 +54,6 @@
     </form>
   </div>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="uploadMedia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -66,18 +65,15 @@
       <iframe name="mediaUploadForm"></iframe>
       <?=form_open_multipart("welcome/community_media_upload", array('target' => "mediaUploadForm"))?>
       <!-- <form target="mediaUploadForm" encription="multipart"> -->
-        <div class="modal-body">
-          <input type="file" />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
+      <div class="modal-body">
+        <input type="file" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
       </form>
     </div>
   </div>
 </div>
-
-
-
 </div>

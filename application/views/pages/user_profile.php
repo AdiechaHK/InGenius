@@ -1,6 +1,5 @@
 <div>
   <h1>User Profile</h1>
-
   <p><strong>Username: </strong><?=isset($user->username)?$user->username:"Undefine - username"?></p>
   <p><strong>Email address: </strong><?=isset($user->email)?$user->email:"Undefine - email"?></p>
   <p><strong>Date of birth: </strong><?=isset($user->dob)?$user->dob:"Undefine - dob"?></p>

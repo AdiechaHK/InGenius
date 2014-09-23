@@ -1,7 +1,6 @@
 <div>
   <!-- Services list -->
   <div service="getCommunitiesList" url=<?="'".site_url('api/getCommunitiesList')."'"?> ></div>
-
   <div class="pos-img-vid clearfix">
     <div class="img-vid">
       <span>Categories</a></span>
@@ -9,27 +8,24 @@
     <img src=<?="'".base_url("public/img/bottom-img.png")."'"?> >
   </div>
   <div ng-controller="communityController">
-
-<!--     <div ng-repeat="comm in communities">
+    <!--     <div ng-repeat="comm in communities">
       {{comm.name}}
-    </div>
- -->
-
+      </div>
+      -->
     <!-- Previous code - using angular js -->
     <!--
-    <div class="imgWrap" ng-repeat="comm in communities">
-      <img class="img-models-1" src="{{comm.icon}}" alt="polaroid" />
-      <div class="imgDescription">
-        <div class="img-hover-text">
-          <div class="bk-color">
-            <div><?=anchor("welcome/community_detail/{{comm.id}}", "{{comm.name}}")?></div>
-            <div>644 Discuss</div>
+      <div class="imgWrap" ng-repeat="comm in communities">
+        <img class="img-models-1" src="{{comm.icon}}" alt="polaroid" />
+        <div class="imgDescription">
+          <div class="img-hover-text">
+            <div class="bk-color">
+              <div><?=anchor("welcome/community_detail/{{comm.id}}", "{{comm.name}}")?></div>
+              <div>644 Discuss</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    -->
-
+      -->
     <div>
       <?php foreach ($communities as $comm) { ?>
       <div class="imgWrap" ng-repeat="comm in communities">

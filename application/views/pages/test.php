@@ -16,7 +16,7 @@
           </tr>
         </thead>
         <tbody>
-        <?php foreach ($test as $comm) { ?>
+          <?php foreach ($test as $comm) { ?>
           <tr>
             <td><?=$comm->id?></td>
             <td><?=$comm->name?></td>
@@ -26,7 +26,7 @@
             <td><?=$comm->c_likes?></td>
             <!-- <td>c_likes</td> -->
           </tr>
-        <?php } ?>
+          <?php } ?>
         </tbody>
       </table>
     </div>
