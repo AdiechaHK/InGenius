@@ -299,12 +299,12 @@ ul.dropdown-menu li.dropdown-menu-item {
   font-size: 12px;
 }
 
-.navbar {
+.custom-navbar {
   display: inline-block;
   text-decoration: none;
 }
 
-.navbar li {
+.custom-navbar li {
   font-family: 'tw-cen-mt-condensed', sans-serif;
   display: inline-block;
   text-decoration: none;
@@ -316,17 +316,17 @@ ul.dropdown-menu li.dropdown-menu-item {
   letter-spacing: 1px;
 }
 
-.navbar li a {
+.custom-navbar li a {
   color: black !important;
   text-decoration: none !important;
   text-shadow: none !important;
 }
 
-.navbar li a:hover {
+.custom-navbar li a:hover {
   color: #d32840 !important;
 }
 
-.navbar .active-tab {
+.custom-navbar .active-tab {
   color: #d32840 !important;
 }
 

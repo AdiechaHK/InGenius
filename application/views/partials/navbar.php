@@ -1,4 +1,4 @@
-<ul class="navbar navbar-right">
+<ul class="navbar navbar-right custom-navbar">
   <?php if(isset($active_tab) && $active_tab == "home") { ?>
   <li><a href="#" class="active-tab">HOME</a></li>
   <?php } else { ?>
