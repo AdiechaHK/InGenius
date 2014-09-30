@@ -1,5 +1,6 @@
 .navbar-fixed-top {
-  /*background-image: url('http://www.fas.org/irp/imint/docs/rst/Sect19/2004-09-07-E0200481-medium.jpg')*/;
+  /*background-image: url('http://www.fas.org/irp/imint/docs/rst/Sect19/2004-09-07-E0200481-medium.jpg')*/
+  ;
 }
 
 .navbar-fixed-top .navbar-brand {
@@ -7,7 +8,8 @@
   line-height: 35px;
   /*font-family: 'Overlock', serif;*/
   font-family: 'Capriola', sans-serif;
-/*font-family: 'Ruluko', sans-serif;*/;
+/*font-family: 'Ruluko', sans-serif;*/
+  ;
 }
 
 .navbar-fixed-top .navbar-brand:hover {
@@ -18,7 +20,8 @@
 body  #wrap > .container {
 /*  padding: 20px 15px 0px;
   margin-top: 66px;
-*/;
+*/
+  ;
 }
 
 body {
@@ -26,7 +29,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: white;
-*/;
+*/
+  ;
 }
 
 .panel-body {
@@ -264,36 +268,18 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 .logo {
-  margin-left: 200px;
-  margin-top: 20px;
-  margin-bottom: -15px;
-  height: 70px;
-  padding-right: 15px;
-}
-
-.line {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: -48px;
-  border-right: 1px solid #dedede;
-  height: 50px;
-  margin-right: 100px;
-  margin-left: 0px;
+  width: 200px;
 }
 
 .user {
-  width: 50px;
   border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: -34px;
-  margin-left: -80px;
   box-shadow: 0 0 1px black;
 }
 
 .user_name {
   position: relative;
-  top: 7px;
-  left: 12px;
+  top: -20px;
+  left: 10px;
   color: #4d4d4d;
   letter-spacing: 1px;
   font-size: 12px;
@@ -307,11 +293,8 @@ ul.dropdown-menu li.dropdown-menu-item {
 .custom-navbar li {
   font-family: 'tw-cen-mt-condensed', sans-serif;
   display: inline-block;
-  text-decoration: none;
+  list-style: none;
   margin: 0 5px 0 5px;
-  position: relative;
-  right: 13%;
-  top: 28px;
   font-size: 24px;
   letter-spacing: 1px;
 }
@@ -415,7 +398,8 @@ ul.dropdown-menu li.dropdown-menu-item {
   background: linear-gradient(135deg, rgba(211,40,64,1) 0%,rgba(211,40,64,1) 51%,rgba(190,36,58,1) 51%,rgba(190,36,58,1) 100%);
  /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d32840', endColorstr='#be243a',GradientType=1 );
- /* IE6-8 fallback on horizontal gradient */;
+ /* IE6-8 fallback on horizontal gradient */
+  ;
 }
 
 .text {
@@ -785,7 +769,8 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 .form-container {
   margin: 20px 0px;
-  /*background-color: cyan;*/;
+  /*background-color: cyan;*/
+  ;
 }
 
 .formSpecialLinks, .formSpecialLinks:hover {
@@ -794,4 +779,91 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 #uploadMedia iframe[name=mediaUploadForm] {
   display: none;
+}
+
+.logo-user-photo-name,
+.navigaton,
+.profile-block,
+.logo-block,
+.user-photo,
+.user_name,
+.wrap-logo-user-profile,
+.custom-navbar {
+  display: inline-block;
+}
+
+.logo-block {
+  padding-right: 25px;
+  margin-right: 25px;
+  border-right: 1px solid #dedede;
+  margin-left: 150px;
+}
+
+.logo-user-photo-name {
+  margin-top: 20px;
+}
+
+.navigaton {
+  float: right;
+  margin-top: 13px;
+  margin-right: 15px;
+}
+
+.header {
+  margin-top: 15px;
+}
+
+.display-block-show-lg {
+  display: none;
+}
+
+ /*media page media query */
+@media (max-width: 992px) {
+
+  .logo-block {
+    margin-left: 15px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .profile-block {
+    display: none;
+  }
+
+  .logo-block {
+    padding-right: 0px;
+    margin-right: 0px;
+    border: none;
+  }
+}
+
+@media (max-width: 630px) {
+  .display-block-hide-xs {
+    display: none;
+  }
+
+  .display-block-show-xs {
+    display: block;
+  }
+
+  .wrap-logo-user-profile {
+    display: block;
+    text-align: center;
+    float: none;
+  }
+
+  .logo-block {
+    margin-left: 0px;
+    margin-bottom: 15px;
+  }
+
+  .input-xs {
+    width: 200px;
+    margin-top: 9px;
+    margin-left: 10px;
+  }
 }
