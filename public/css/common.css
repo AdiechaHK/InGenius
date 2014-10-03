@@ -1,3 +1,6 @@
+html{
+  overflow-x: hidden !important;
+}
 .navbar-fixed-top {
   /*background-image: url('http://www.fas.org/irp/imint/docs/rst/Sect19/2004-09-07-E0200481-medium.jpg')*/
   ;
@@ -219,17 +222,23 @@ ul.dropdown-menu li.dropdown-menu-item {
 .box-glyficon {
   padding: 10px;
   background-color: rgb(211,40,64);
-  display: inline-block;
   color: white;
-  position: relative;
-  top: 30px;
 }
 
-.position-right-glyficon {
-  position: relative;
-  top: 120px;
+.left-arrow,
+.right-arrow{
+  display: inline-block;
+  position: absolute;
+  top: 210px;
 }
 
+.left-arrow{
+  left: 0;
+}
+
+.right-arrow{
+  right: 0;
+}
 /**********************************************/
 /*  HEADER related CSS                        */
 /**********************************************/
@@ -261,7 +270,6 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 .bannner {
   height: 294px;
-  width: 100%;
   background-image: url(../img/banner.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -314,10 +322,11 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 .time_version {
+  position: absolute;
   display: inline-block;
-  margin-top: 117px;
   font-size: 10px;
-  margin-left: 183px;
+  top: 190px;
+  left: 165px;
 }
 
 .line1 {
@@ -329,7 +338,7 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 .title {
   color: #b3b3b3;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
 }
 
 .value {
@@ -349,8 +358,9 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 .search {
   display: inline-block;
-  margin-right: 9%;
-  margin-top: 60px;
+  position: absolute;
+  top: 135px;
+  right: 70px;
 }
 
 .search_field {
@@ -375,12 +385,13 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 .btn-enter {
+  height: 35px;
   border: none !important;
   margin-top: -1px;
   padding: 6px 30px;
   font-family: 'tw-cen-mt-bold';
   font-size: 15px;
-  margin-left: 20px;
+  margin-left: 10px;
   background: rgb(211,40,64);
  /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -403,8 +414,9 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 .text {
-  margin-right: 5%;
-  margin-top: 26px;
+  position: absolute;
+  right: 70px;
+  top: 255px;
 }
 
 .body-contain {
@@ -489,22 +501,25 @@ ul.dropdown-menu li.dropdown-menu-item {
   margin-left: 20px;
 }
 
-.footer img {
-  width: 100%;
+.footer{
+  height: 63px;
+  background-image: url(../img/footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.footer-text {
+.footer-text{
+  position: relative;
+  top: 20px;
+  left: 165px;
+}
+
+
+.my-custom-clock{
   display: inline-block;
-  position: relative;
-  top: 45px;
-  left: 170px;
-}
-
-.footer-time {
-  position: relative;
   font-family: 'tw-cen-mt-bold';
   color: #990000;
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 .copyright {
@@ -827,6 +842,10 @@ ul.dropdown-menu li.dropdown-menu-item {
   .header {
     margin-bottom: 15px;
   }
+
+  .time_version {
+    top: 205px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -842,6 +861,39 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 @media (max-width: 630px) {
+
+
+.time_version {
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+  top: 125px;
+  left: 5px;
+}
+
+  .left-arrow,
+  .right-arrow{
+      display: inline-block;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    .left-arrow{
+    }
+
+    .right-arrow{
+      right: 0;
+    }
+
+  .navbar{
+    margin-bottom: 0px;
+  }
+
+  .header{
+    margin-bottom: 0px;
+  }
+
   .display-block-hide-xs {
     display: none;
   }
@@ -866,4 +918,17 @@ ul.dropdown-menu li.dropdown-menu-item {
     margin-top: 9px;
     margin-left: 10px;
   }
+
+  .xs-footer{
+    margin: 20px 0 0 0;
+    padding: 20px;
+    background-color: #eee;
+  }
+
+  .footer-text{
+    position: relative;
+    top: 10px;
+    left: 0px;
+  }
+
 }
