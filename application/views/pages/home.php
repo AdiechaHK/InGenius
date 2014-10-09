@@ -1,95 +1,185 @@
 <div class="clearfix">
-  <div class="container">
-    <header class="header clearfix">
-      <img src=<?="'".base_url("public/img/logo.png")."'"?> class="logo-w">
-      <ul class="navbar navbar-right custom-nav-margin-top">
-        <li><a href="#" class="active-tab">HOME</a></li>
-        <li><?=anchor("welcome/blog", "BLOG")?></li>
-        <li><?=anchor("welcome/media", "MEDIA")?></li>
-        <li><?=anchor("welcome/community", "COMMUNITY")?></li>
-        <li>
-          <div class="dropdown">
-            <a data-toggle="dropdown" href="#">USER</a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-              <?php if(isset($user) && $user != NULL) { ?>
-              <li class="dropdown-menu-item" role="presentation"><?=anchor("welcome/user", "Profile")?></li>
-              <li class="dropdown-menu-item" role="presentation"><?=anchor("user/logout", "Sign out")?></li>
-              <?php } else { ?>
-              <li class="dropdown-menu-item" role="presentation"><a href="#" data-toggle="modal" data-target="#signInModal">Sign In</a></li>
-              <li class="dropdown-menu-item" role="presentation"><a href="#" data-toggle="modal" data-target="#regModal">Registration</a></li>
-              <?php } ?>
-            </ul>
+  <header class="header">
+    <div class="clearfix">
+      <div class="wrap-logo-user-profile">
+        <div class="logo-block">
+          <img src=<?="'".base_url("public/img/logo.png")."'"?> class="logo">
+        </div>
+        <div class="profile-block">
+          <?php if(isset($user)) { ?>
+          <div class="user-photo">
+            <img width="80" height="80" src=<?=isset($user)&&isset($user->profile_pic)?$user->profile_pic:base_url('public/img/user-icon.png')?> class="user">
           </div>
-        </li>
-        <!--             <li><?=anchor("welcome/user", "USER")?></li>
-          <?php if (isset($user)) { ?>
-          <li><?=anchor("user/logout", "LOGOUT")?></li>
+          <div class="user_name">
+            <strong><?=$user->username?></strong>
+            <div><?=$user->location?></div>
+          </div>
           <?php } ?>
-          -->          
-      </ul>
-      <!-- Modal -->
-      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Sign In</h4>
-            </div>
-            <?=form_open('user/login')?>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Sign In</button>
-            </div>
-            </form>
-          </div>
         </div>
       </div>
-      <!-- Modal -->
-      <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Registraion</h4>
+      <div class="navigaton display-block-hide-xs">
+        <ul class="custom-navbar">
+          <?php if(isset($active_tab) && $active_tab == "home") { ?>
+          <li><a href="#" class="active-tab">HOME</a></li>
+          <?php } else { ?>
+          <li><?=anchor("welcome", "HOME")?></li>
+          <?php } ?>
+          <?php if(isset($active_tab) && $active_tab == "blog") { ?>
+          <li><a href="#" class="active-tab">BLOG</a></li>
+          <?php } else { ?> 
+          <li><?=anchor("welcome/blog", "BLOG")?></li>
+          <?php } ?>
+          <?php if(isset($active_tab) && $active_tab == "media") { ?>
+          <li><a href="#" class="active-tab">MEDIA</a></li>
+          <?php } else { ?>
+          <li><?=anchor("welcome/media", "MEDIA")?></li>
+          <?php } ?>
+          <?php if(isset($active_tab) && $active_tab == "community") { ?>
+          <li><a href="#" class="active-tab">COMMUNITY</a></li>
+          <?php } else { ?>
+          <li><?=anchor("welcome/community", "COMMUNITY")?></li>
+          <?php } ?>
+          <li>
+            <div class="dropdown">
+              <a data-toggle="dropdown" href="#">USER</a>
+              <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+                <?php if(isset($user) && $user != NULL) { ?>
+                <li class="dropdown-menu-item" role="presentation"><?=anchor("welcome/user", "Profile")?></li>
+                <li class="dropdown-menu-item" role="presentation"><?=anchor("user/logout", "Sign out")?></li>
+                <?php } else { ?>
+                <li class="dropdown-menu-item" role="presentation"><a href="#" data-toggle="modal" data-target="#signInModal">Sign In</a></li>
+                <li class="dropdown-menu-item" role="presentation"><a href="#" data-toggle="modal" data-target="#regModal">Registration</a></li>
+                <?php } ?>
+              </ul>
             </div>
-            <?=form_open('user/signup')?>
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
-              </div>
-              <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
-              </div>
-              <div class="form-group">
-                <label for="cpassword">Confirm password</label>
-                <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
-              </div>
+          </li>
+        </ul>
+      </div>
+      <div class="">
+        <nav class="navbar navbar-default display-block-show-lg display-block-show-xs" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <input type="search" class="form-control input-xs" placeholder="Search">
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Register</button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <?php if(isset($active_tab) && $active_tab == "home") { ?>
+                <li><a href="#" class="active">HOME</a></li>
+                <?php } else { ?>
+                <li><?=anchor("welcome", "HOME")?></li>
+                <?php } ?>
+                <?php if(isset($active_tab) && $active_tab == "blog") { ?>
+                <li><a href="#" class="active">BLOG</a></li>
+                <?php } else { ?> 
+                <li><?=anchor("welcome/blog", "BLOG")?></li>
+                <?php } ?>
+                <?php if(isset($active_tab) && $active_tab == "media") { ?>
+                <li><a href="#" class="active">MEDIA</a></li>
+                <?php } else { ?>
+                <li><?=anchor("welcome/media", "MEDIA")?></li>
+                <?php } ?>
+                <?php if(isset($active_tab) && $active_tab == "community") { ?>
+                <li><a href="#" class="active">COMMUNITY</a></li>
+                <?php } else { ?>
+                <li><?=anchor("welcome/community", "COMMUNITY")?></li>
+                <?php } ?>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">USER <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <?php if(isset($user) && $user != NULL) { ?>
+                    <li><?=anchor("welcome/user", "Profile")?></li>
+                    <li><?=anchor("user/logout", "Sign out")?></li>
+                    <?php } else { ?>
+                    <li><a href="#" data-toggle="modal" data-target="#signInModal">Sign In</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#regModal">Registration</a></li>
+                    <?php } ?>
+                  </ul>
+                </li>
+              </ul>
             </div>
-            </form>
+            <!-- /.navbar-collapse -->
           </div>
+          <!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <?=form_open('user/login')?>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
         </div>
       </div>
-    </header>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Registraion</h4>
+      </div>
+      <?=form_open('user/signup')?>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+        </div>
+        <div class="form-group">
+          <label for="cpassword">Confirm password</label>
+          <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      </form>
+    </div>
   </div>
 </div>
 <br><br>
@@ -151,8 +241,28 @@
   </div>
   <br><br><br><br>
 </section>
-<footer class="footer clearfix">
+<!-- <footer class="footer clearfix">
   <span class="f2">copyright protected all rights reserved</span>
   <div class="foo-text"><span class="footer-time">0245PM |</span><span class="copyright">Team Akron UK submits the 51st idea in the power category</span></div>
   <img src=<?="'".base_url("public/img/footer.png")."'"?> >
+</footer> -->
+<br>
+<br>
+<footer class="clearfix">
+  <div class="footer display-block-hide-xs">
+      <div class="footer-text">
+    <span class="my-custom-clock" pattern="hhmmmr" current=<?='"'.time().'"'?> ></span>
+    &nbsp;|&nbsp;
+    <span class="copyright">Team Akron UK submits the 51st idea in the power category</span>
+      </div>
+  </div>
+
+  <div class="xs-footer display-block-show-xs">
+      <div class="footer-text">
+    <span class="my-custom-clock" pattern="hhmmmr" current=<?='"'.time().'"'?> ></span>
+    &nbsp;|&nbsp;
+    <span class="copyright">Team Akron UK submits the 51st idea in the power category</span>
+      </div>
+  </div>
+
 </footer>

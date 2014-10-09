@@ -1,3 +1,10 @@
+.banner1 {
+    background-image: url("../img/121.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 753px;
+}
+
 .logo-w {
   width: 300px;
   margin-top: 20px;
