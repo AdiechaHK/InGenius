@@ -17,7 +17,6 @@
         </div>
         <?php } ?>
       </div>
-      <!-- <?=$user->location?> -->
       <div class="navigaton display-block-hide-xs">
         <ul class="custom-navbar">
           <?php if(isset($active_tab) && $active_tab == "home") { ?>
@@ -67,7 +66,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               </button>
-              <input type="search" class="form-control input-xs" placeholder="Search">
+              <div class="input-group input-xs">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+              <!-- <input type="search" class="form-control input-xs" placeholder="Search"> -->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
