@@ -28,7 +28,7 @@
           <?php } ?>
         </div>
         <div class="col-md-6 col-sm-8 col-xs-12">
-          <div class="img-thumb-p"><img src=""></div>
+          <div class="img-thumb-p text-center"><img src=""></div>
         </div>
       </div>
       <div class="row">
