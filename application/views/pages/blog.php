@@ -68,16 +68,19 @@
       <div class="title-c41"><?=str_replace("\n", "<br>",  $blog_post->details)?></div>
     </div>
     <div class="clearfix col-sm-3 top-spacing">
-      <?php if(isset($user)) { ?>
-      <?=anchor("welcome/blog_like/".$blog_post->id, (isset($liked) && $liked==1) ?"Unlike":"Like", array('class'=>"see-all-1"))?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=anchor("#", "Share")?>
-      <?=form_open("welcome/blog_comment/$blog_post->id")?>
-      <!-- <div class="col-sm-12"> -->
-      <!-- <input type="text" class="form-control" name="body" placeholder="Body"> -->
-      <textarea class="col-sm-12 form-control commentTextArea" rows="3" name="comment" placeholder="Write your comment here"></textarea>
-      <button type="submit" class="col-sm-12 btn btn-danger btn-enter btn-enter-margin">Comment</button>
-      <!-- </div> -->
-      <?=form_close()?>
-      <div style="margin-top: 150px;">
+      <div class="clearfix">
+        <?php if(isset($user)) { ?>
+        <?=anchor("welcome/blog_like/".$blog_post->id, (isset($liked) && $liked==1) ?"Unlike":"Like", array('class'=>"see-all-1"))?>&nbsp;&nbsp;|&nbsp;&nbsp;<?=anchor("#", "Share")?>
+        <?=form_open("welcome/blog_comment/$blog_post->id")?>
+        <!-- <div class="col-sm-12"> -->
+        <!-- <input type="text" class="form-control" name="body" placeholder="Body"> -->
+        <textarea class="col-sm-12 form-control commentTextArea" rows="3" name="comment" placeholder="Write your comment here"></textarea>
+        <button type="submit" class="col-sm-12 btn btn-danger btn-enter btn-enter-margin">Comment</button>
+        <!-- </div> -->
+        <?=form_close()?>  
+      </div>
+      <br>
+      <div class="clearfix">
         <?php } else { ?>
         <div>
           <?php } ?>
