@@ -466,7 +466,7 @@ ul.dropdown-menu li.dropdown-menu-item {
 .img-thumb-cat {
   height: 128px;
   width: 128px;
-  background-color: red;
+  background-color: #eee;
   float: left;
   margin: 5px;
   margin-top: 15px;
