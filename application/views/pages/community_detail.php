@@ -3,10 +3,10 @@
   <?=anchor("welcome/community", "Back to communities")?><br><br>
   <div class="border-class">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-sm-6 col-xs-12">
         <iframe src=<?='"'.site_url('welcome/community_post_list/'.$community->id).'"'?> width="100%" height="400" border="0" style="border: none"></iframe>
       </div>
-      <div class="col-lg-6">
+      <div class="col-sm-6 col-xs-12">
         <iframe src=<?='"'.site_url('welcome/community_debate_list/'.$community->id).'"'?> width="100%" height="400" border="0" style="border: none"></iframe>
       </div>
     </div>

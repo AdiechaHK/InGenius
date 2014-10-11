@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-sm-6 col-xs-12">
   <div class="clearfix">
     <img class="img-size-c hide" src="images/sutcase.png" />&nbsp;<span class="title-c"><?=$title?></span>
     <span class="pull-right see-all hide"><a href="">See all posts</a></span>
