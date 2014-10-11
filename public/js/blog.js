@@ -48,15 +48,6 @@ angular.module("myApp.filters", []).filter('isActive', [function() {
     }
   }
 }])
-Date.prototype.format = function(regEx) {
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  regEx = regEx.replace("dd",this.getDate());
-  regEx = regEx.replace("mmmm",months[this.getMonth()]);
-  regEx = regEx.replace("mmm",months[this.getMonth()].substr(0, 3));
-  regEx = regEx.replace("mm",this.getMonth() + 1);
-  regEx = regEx.replace("yyyy", this.getFullYear());
-  return regEx;
-};
 
 
 function getTimeDiff(currentTime, eventTime) {
