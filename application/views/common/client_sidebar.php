@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-lg-12">
         <br>
-        <h5>The 16th Future Awards Nominees Ceremony,Transcorp Hilton Abuja</h5>
+        <h5 class="color-gray">The 16th Future Awards Nominees Ceremony,Transcorp Hilton Abuja</h5>
         <br>
       </div>
     </div>

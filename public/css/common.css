@@ -285,12 +285,12 @@ ul.dropdown-menu li.dropdown-menu-item {
 }
 
 .user_name {
-  position: relative;
-  /*top: -20px;*/
-  left: 10px;
+  margin-left: 10px;
   color: #4d4d4d;
   letter-spacing: 1px;
   font-size: 12px;
+  vertical-align: top;
+  width: 100px;
 }
 
 .custom-navbar {
@@ -986,4 +986,11 @@ ul.dropdown-menu li.dropdown-menu-item {
   width: 500px;
   margin-top: -175px;
   margin-left: 280px;
+}
+
+.color-gray{
+   color: #545454;
+  font-size: 20px;
+  font-family: 'tw-cen-mt-condensed';
+  font-weight: 400;
 }

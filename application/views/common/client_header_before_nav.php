@@ -5,17 +5,19 @@
         <div class="logo-block">
           <img src=<?="'".base_url("public/img/logo.png")."'"?> class="logo">
         </div>
+         <?php if(isset($user)) { ?>
         <div class="profile-block">
-          <?php if(isset($user)) { ?>
           <div class="user-photo">
             <img width="80" height="80" src=<?=isset($user)&&isset($user->profile_pic)?$user->profile_pic:base_url('public/img/user-icon.png')?> class="user">
           </div>
           <div class="user_name">
-            <strong><?=$user->username?></strong>
-          </div>
-          <?php } ?>
+            <div><strong><?=$user->username?></strong></div>
+            <div><?=$user->location?></div>
+          </div>         
         </div>
+        <?php } ?>
       </div>
+      <!-- <?=$user->location?> -->
       <div class="navigaton display-block-hide-xs">
         <ul class="custom-navbar">
           <?php if(isset($active_tab) && $active_tab == "home") { ?>
