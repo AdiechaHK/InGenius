@@ -994,3 +994,7 @@ ul.dropdown-menu li.dropdown-menu-item {
   font-family: 'tw-cen-mt-condensed';
   font-weight: 400;
 }
+
+.btn-enter-margin{
+  margin-left: 0px;
+}

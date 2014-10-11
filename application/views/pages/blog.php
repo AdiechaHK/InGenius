@@ -74,7 +74,7 @@
       <!-- <div class="col-sm-12"> -->
       <!-- <input type="text" class="form-control" name="body" placeholder="Body"> -->
       <textarea class="col-sm-12 form-control commentTextArea" rows="3" name="comment" placeholder="Write your comment here"></textarea>
-      <button type="submit" class="col-sm-12 btn btn-danger btn-enter ">Comment</button>
+      <button type="submit" class="col-sm-12 btn btn-danger btn-enter btn-enter-margin">Comment</button>
       <!-- </div> -->
       <?=form_close()?>
       <div style="margin-top: 150px;">
