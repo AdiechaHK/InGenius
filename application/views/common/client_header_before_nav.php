@@ -191,8 +191,6 @@
 
 
 <section class="bannner clearfix">
-
-
 <div class="left-arrow">
   <?=anchor($previous_page_link, "<span class='glyphicon glyphicon-chevron-left'></span>", array('class'=> "box-glyficon"))?>
 </div>
@@ -206,6 +204,8 @@
   <span class="title">VERSION #</span>
   <span class="value">2.0.SPT2013</span>
 </div>
+<h4 class="page-title-header">COMMUNITY</h4>
+<h1 class="page-title">MEDIA</h1>
 <!-- <div class="big-text"><?=isset($active_tab)?strtoupper($active_tab):""?></div> -->
 <div class="search display-block-hide-xs">
   <input type="text" name="search" class="search_field" placeholder="SEARCH In’GENIUS">

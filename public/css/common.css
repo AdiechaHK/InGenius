@@ -326,7 +326,7 @@ ul.dropdown-menu li.dropdown-menu-item {
   display: inline-block;
   font-size: 10px;
   top: 190px;
-  left: 165px;
+  left: 183px;
 }
 
 .line1 {
@@ -1006,4 +1006,23 @@ ul.dropdown-menu li.dropdown-menu-item {
 
 .btn-enter-margin{
   margin-left: 0px;
+}
+
+.page-title-header{
+  position: absolute;
+  top: 260px;
+  left: 183px;
+  font-family: 'tw-cen-mt-condensed';
+  font-weight: 400;
+  color:  #990000;
+}
+
+.page-title{
+  position: absolute;
+  top: 260px;
+  left: 183px;
+  font-family: 'tw-cen-mt-condensed';
+  font-weight: 400;
+  color: white;
+  font-size: 65px;
 }
