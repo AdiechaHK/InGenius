@@ -56,6 +56,8 @@ class Welcome extends CI_Controller {
 	public function media() {
 		$data['load_self'] = true;
 		$data['active_tab'] = "media";
+		// $data['header_pre_title'] = "";
+		$data['page_title'] = "MEDIA";
 		$user = $this->session->userdata('user');
     $this->load->model('media_cat');
 		$data['mcat_list'] = $this->media_cat->get_list();
@@ -199,6 +201,7 @@ class Welcome extends CI_Controller {
 	public function community() {
 		$data['load_self'] = true;
 		$data['active_tab'] = "community";
+		$data['page_title'] = "COMMUNITY";
 		$user = $this->session->userdata('user');
 		if($user != NULL) {
 			$data['user'] = $user;
@@ -212,6 +215,10 @@ class Welcome extends CI_Controller {
 	{
 		$data['load_self'] = true;
 		$data['active_tab'] = "media";
+		$data['page_pre_title'] = "media";
+		$this->load->model('media_cat');
+		$mCat = $this->media_cat->get_entry_by_id($id);
+		$data['page_title'] = $mCat->name;
 		$user = $this->session->userdata('user');
 		$this->load->model('media_content');
 		$data['images'] = $this->media_content->get_list_by_cat($id, 0);
@@ -226,12 +233,16 @@ class Welcome extends CI_Controller {
 	{
 		$data['load_self'] = true;
 		$data['active_tab'] = "community";
+		$data['page_pre_title'] = "COMMUNITY";
 		$user = $this->session->userdata('user');
 		if($user != NULL) {
 			$data['user'] = $user;
 		} 
 		$this->load->model('community');
-		$data['community'] = $this->community->get_entry_by_id($id);
+		$community = $this->community->get_entry_by_id($id);
+		$data['community'] = $community;
+		$data['page_title'] = $community->name;
+
 		// echo var_dump($data);
 		client_page_render($this, 'community_detail', $data);
 	}
@@ -355,6 +366,10 @@ class Welcome extends CI_Controller {
 
 	public function community_media_upload() {
 		echo "<p id='json'>Hello friends</p>";
+	}
+
+	public function search() {
+		client_page_render($this, 'search');
 	}
 }
 // Kapur kachli, phudin hara, limbu, mari mithu, sanchar, aaduno ras

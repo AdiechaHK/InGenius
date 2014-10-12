@@ -204,8 +204,8 @@
   <span class="title">VERSION #</span>
   <span class="value">2.0.SPT2013</span>
 </div>
-<h4 class="page-title-header">COMMUNITY</h4>
-<h1 class="page-title">MEDIA</h1>
+<h4 class="page-pre-title"><?=isset($page_pre_title)?$page_pre_title:""?></h4>
+<h1 class="page-title"><?=isset($page_title)?$page_title:""?></h1>
 <!-- <div class="big-text"><?=isset($active_tab)?strtoupper($active_tab):""?></div> -->
 <div class="search display-block-hide-xs">
   <input type="text" name="search" class="search_field" placeholder="SEARCH In’GENIUS">

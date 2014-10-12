@@ -54,7 +54,7 @@ $db['default']['password'] = 'an6s3ehx';
 $db['default']['database'] = 'c8ingenius2';
 */
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'ingenius';
 
 

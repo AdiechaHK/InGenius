@@ -40,6 +40,11 @@ class Media_cat extends CI_Model {
         return $query->result();
     }
 
+    function get_entry_by_id($id) {
+        $query = $this->db->get_where('media_cat', array('id' => $id));
+        return $query->row();
+    }
+
     function insert_entry($input)
     {
         $this->db->insert('media_cat', $input);

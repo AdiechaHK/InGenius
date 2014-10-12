@@ -66,7 +66,7 @@
       <?=form_open_multipart("welcome/community_media_upload", array('target' => "mediaUploadForm"))?>
       <!-- <form target="mediaUploadForm" encription="multipart"> -->
       <div class="modal-body">
-        <input type="file" />
+        <input type="file" name="comm_media" id="comm_media" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

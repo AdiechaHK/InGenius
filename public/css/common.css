@@ -1008,13 +1008,14 @@ ul.dropdown-menu li.dropdown-menu-item {
   margin-left: 0px;
 }
 
-.page-title-header{
+.page-pre-title{
   position: absolute;
   top: 260px;
   left: 183px;
   font-family: 'tw-cen-mt-condensed';
   font-weight: 400;
   color:  #990000;
+  text-transform: uppercase;
 }
 
 .page-title{
@@ -1025,4 +1026,5 @@ ul.dropdown-menu li.dropdown-menu-item {
   font-weight: 400;
   color: white;
   font-size: 65px;
+  text-transform: uppercase;
 }
