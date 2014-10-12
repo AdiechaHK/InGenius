@@ -1042,3 +1042,14 @@ ul.dropdown-menu li.dropdown-menu-item {
 .search-link-style{
   text-decoration: none !important;
 }
+
+.search-section-margin{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.search-section-margin h3{
+  font-family: 'tw-cen-mt-condensed';
+  font-weight: 400;
+  font-size: 28px;
+}
